@@ -18,4 +18,8 @@ open class MLViewController : UIViewController {
         setObservers()
     }
     
+    open func setFieldsForLanguage(language l : MLViewControllerLanguages) {
+        
+    }
+    
 }

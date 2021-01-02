@@ -9,8 +9,6 @@ import Foundation
 
 extension MLViewController {
     
-    open func setFieldsForLanguage(language l : MLViewControllerLanguages) {
-        
-    }
+    
     
 }
