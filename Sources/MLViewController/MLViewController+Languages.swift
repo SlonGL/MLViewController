@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum MLViewControllerLanguages : String, Codable {
+public enum MLViewControllerLanguages : String, Codable {
     case Auto = "auto"
     case Unknown = "unknown"
     case EnglishUS = "us"
@@ -49,10 +49,10 @@ enum MLViewControllerLanguages : String, Codable {
     
     static func flagImage(language: MLViewControllerLanguages) -> UIImage {
         let imageName = "\(language.rawValue)_flag"
-        if let image = UIImage(named: imageName) {
+        if let image = UIImage(named: imageName, in: .module, compatibleWith: nil) {
             return image
         } else {
-            return UIImage(named: "unknown_flag") ?? UIImage()
+            return UIImage(named: "unknown_flag", in: .module, compatibleWith: nil) ?? UIImage()
         }
     }
     

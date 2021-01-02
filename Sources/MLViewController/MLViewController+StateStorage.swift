@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MLViewControllerStateStorage {
+open class MLViewControllerStateStorage {
     
     static let LANGUAGE_USER_DEFAULTS_KEY = "MLViewController.state.key"
     
