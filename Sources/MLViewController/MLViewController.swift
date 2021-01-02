@@ -1,7 +1,7 @@
 
 import UIKit
 
-public class MLViewController : UIViewController {
+open class MLViewController : UIViewController {
     
     var _logLevel : MLVCLogLevel = .medium
     var _languageChangeNotification : Notification? = nil
