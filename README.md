@@ -1,3 +1,3 @@
 # MLViewController
 
-A description of this package.
+Multilingual UIViewController extension with on-fly language change and prepared language button
