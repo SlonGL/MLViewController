@@ -12,15 +12,15 @@ open class MLViewControllerStateStorage {
     
     static let LANGUAGE_USER_DEFAULTS_KEY = "MLViewController.state.key"
     
-    class open func saveState(language: MLViewControllerLanguages) {
+    class open func saveState(language: MLVCLanguages) {
         let defaults = UserDefaults.standard
         defaults.set(language.rawValue, forKey: LANGUAGE_USER_DEFAULTS_KEY)
     }
     
-    class open func loadState() -> MLViewControllerLanguages? {
+    class open func loadState() -> MLVCLanguages? {
         let defaults = UserDefaults.standard
         if let languageRaw = defaults.string(forKey: LANGUAGE_USER_DEFAULTS_KEY) {
-            return MLViewControllerLanguages(rawValue: languageRaw)
+            return MLVCLanguages(rawValue: languageRaw)
         } else {
             return nil
         }

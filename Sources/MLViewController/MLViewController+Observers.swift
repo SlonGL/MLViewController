@@ -13,27 +13,24 @@ extension Notification.Name {
 
 extension MLViewController {
     
-    open func setObservers() {
+    func setObservers() {
         NotificationCenter.default.addObserver(forName: .MLViewControllerLanguageDidChange, object: nil, queue: nil) { [weak self] (notification) in
             self?.languageChangeNotificationObserver(notification: notification)
         }
     }
     
-    open func removeObservers() {
-        if _logLevel == .medium {
-            PRINT_DEBUG(self.description, ": Observers removed.")
-        }
-        if _logLevel == .full {
+    func removeObservers() {
+        if MLViewController._logLevel == .medium || MLViewController._logLevel == .full {
             PRINT_DEBUG(self.description, ": Observers removed.")
         }
         NotificationCenter.default.removeObserver(self)
     }
     
     open func languageChangeNotificationObserver(notification: Notification) {
-        if _logLevel == .medium {
+        if MLViewController._logLevel == .medium {
             PRINT_DEBUG(self.description, ": language changed")
         }
-        if _logLevel == .full {
+        if MLViewController._logLevel == .full {
             PRINT_DEBUG(self.description, ": language change notification\nObject: ", String(describing: notification.object), "\nUserInfo: ", String(describing: notification.userInfo))
         }
     }

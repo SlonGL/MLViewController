@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public enum MLViewControllerLanguages : String, Codable {
+public enum MLVCLanguages : String, Codable, CaseIterable {
     case Auto = "auto"
     case Unknown = "unknown"
     case EnglishUS = "us"
@@ -47,7 +47,7 @@ public enum MLViewControllerLanguages : String, Codable {
     case Catalan = "ca_ES"
     case Vietnamese = "vn"
     
-    static func flagImage(language: MLViewControllerLanguages) -> UIImage {
+    static func flagImage(language: MLVCLanguages) -> UIImage {
         let imageName = "\(language.rawValue)_flag"
         if let image = UIImage(named: imageName, in: .module, compatibleWith: nil) {
             return image
@@ -57,14 +57,15 @@ public enum MLViewControllerLanguages : String, Codable {
     }
     
     func flagImage() -> UIImage {
-        return MLViewControllerLanguages.flagImage(language: self)
+        return MLVCLanguages.flagImage(language: self)
     }
     
-    static func languageName(language: MLViewControllerLanguages) -> String {
+    static func languageName(language: MLVCLanguages) -> String {
         return "\(language)"
     }
     
     func languageName() -> String {
-        return MLViewControllerLanguages.languageName(language: self)
+        return MLVCLanguages.languageName(language: self)
     }
+
 }

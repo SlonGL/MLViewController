@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MLVCLogLevel {
+public enum MLVCLogLevel {
     case none
     case medium
     case full
